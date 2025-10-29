@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LASAI: Computer Vision en Patología Farmacéutica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold gradient-text">LASAI</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-purple-600 transition">Inicio</a>
+                    <a href="#historia" class="text-gray-700 hover:text-purple-600 transition">Historia</a>
+                    <a href="#medicina" class="text-gray-700 hover:text-purple-600 transition">Medicina</a>
+                    <a href="#patologia" class="text-gray-700 hover:text-purple-600 transition">Patología</a>
+                    <a href="#conclusiones" class="text-gray-700 hover:text-purple-600 transition">Conclusiones</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 px-4 bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center text-white fade-in-up">
+                <div class="float-animation inline-block mb-8">
+                    <svg class="w-24 h-24 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Computer Vision</h1>
+                <p class="text-2xl md:text-3xl mb-4">Revolucionando la Patología Farmacéutica</p>
+                <p class="text-xl text-purple-200 mb-8 max-w-3xl mx-auto">Análisis de celularidad en médula ósea mediante Deep Learning</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
+                        <p class="text-sm font-semibold">Universidad Nacional Mayor de San Marcos</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full">
+                        <p class="text-sm font-semibold">Octubre 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-8 md:p-12 shadow-xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Sobre la Conferencia</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    Este documento presenta un análisis exhaustivo sobre la <span class="font-semibold text-purple-600">evolución de la visión por computadora</span>, desde los métodos clásicos de los años 70-80 hasta la revolución del deep learning actual.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    La conferencia aborda la aplicación de estas tecnologías en <span class="font-semibold text-purple-600">imagenología médica</span> y su uso específico en <span class="font-semibold text-purple-600">patología farmacéutica</span> para la evaluación de hematotoxicidad en modelos preclínicos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historia Section -->
+    <section id="historia" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Historia y Evolución</h2>
+            
+            <!-- Timeline -->
+            <div class="space-y-12">
+                <!-- 70s-80s -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mr-4">
+                            70s
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Métodos Clásicos</h3>
+                    </div>
+                    <div class="ml-20">
+                        <p class="text-gray-700 mb-4">Los primeros intentos se basaron en:</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">•</span>
+                                <span>Aplicación de filtros y detección de bordes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">•</span>
+                                <span>Super pixels agrupando píxeles similares</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">•</span>
+                                <span><strong>Problema:</strong> Falta de robustez ante variaciones reales (ángulos, iluminación, obstrucciones)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ImageNet -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mr-4">
+                            2010
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">ImageNet: El Cambio de Paradigma</h3>
+                    </div>
+                    <div class="ml-20">
+                        <p class="text-gray-700 mb-4">Una profesora de Stanford creó ImageNet:</p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-semibold text-blue-800 mb-2">📊 1.5 millones de imágenes</p>
+                                <p class="text-sm text-gray-600">Base de datos abierta</p>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-semibold text-blue-800 mb-2">🏷️ 1000 clases</p>
+                                <p class="text-sm text-gray-600">Carros, perros, aviones, etc.</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mt-4 italic">Tasa de error en 2010: <span class="text-red-600 font-bold">28%</span></p>
+                    </div>
+                </div>
+
+                <!-- AlexNet -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mr-4">
+                            2012
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">AlexNet: El Salto Gigante</h3>
+                    </div>
+                    <div class="ml-20">
+                        <p class="text-gray-700 mb-4">La red neuronal AlexNet revolucionó el campo con una reducción drástica del error.</p>
+                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
+                            <p class="text-green-800 font-semibold">💡 Innovación clave: Deep Learning con CNNs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2017 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-500 text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold mr-4">
+                            2017
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Superando a los Humanos</h3>
+                    </div>
+                    <div class="ml-20">
+                        <div class="bg-purple-50 p-6 rounded-lg">
+                            <p class="text-xl text-purple-800 mb-2">🎯 <strong>Hito histórico:</strong></p>
+                            <p class="text-gray-700">El error de los algoritmos fue <span class="font-bold text-purple-600">inferior al error humano</span> al clasificar las mismas imágenes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tareas de Computer Vision -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Tareas de Computer Vision</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4">🖼️</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Clasificación</h3>
+                    <p class="text-gray-600">Identificar qué hay en una imagen</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4">📦</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Detección</h3>
+                    <p class="text-gray-600">Localizar objetos con cajas delimitadoras</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-4">🏷️</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Identificación</h3>
+                    <p class="text-gray-600">Nombrar y clasificar los objetos detectados</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-gradient-to-r from-amber-50 to-orange-50 p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">⚙️ Factores Críticos del Rendimiento</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                        <div>
+                            <p class="font-semibold text-gray-800">Cantidad de datos</p>
+                            <p class="text-gray-600 text-sm">100,000 imágenes vs. 10 hacen la diferencia</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                        <div>
+                            <p class="font-semibold text-gray-800">Poder computacional</p>
+                            <p class="text-gray-600 text-sm">GPU/TPU para procesamiento intensivo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Imaging -->
+    <section id="medicina" class="py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Imagenología Médica</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- X-Ray -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <div class="bg-gray-100 rounded-lg p-4 mb-4">
+                        <div class="text-4xl text-center">☢️</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Rayos X</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Antigua y portátil</li>
+                        <li>✓ Visualiza estructuras sólidas</li>
+                        <li>✓ Primera línea diagnóstica</li>
+                    </ul>
+                </div>
+
+                <!-- CT -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <div class="bg-blue-100 rounded-lg p-4 mb-4">
+                        <div class="text-4xl text-center">🔄</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">CT Scan</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Múltiples ángulos de rayos X</li>
+                        <li>✓ Visualiza densidad de tejidos</li>
+                        <li>✗ Limitado en tejidos blandos</li>
+                    </ul>
+                </div>
+
+                <!-- MRI -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <div class="bg-purple-100 rounded-lg p-4 mb-4">
+                        <div class="text-4xl text-center">🧲</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">MRI</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Detalles en tejidos blandos</li>
+                        <li>✓ Sin radiación ionizante</li>
+                        <li>✓ Distingue materia gris/blanca</li>
+                    </ul>
+                </div>
+
+                <!-- PET-CT -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <div class="bg-green-100 rounded-lg p-4 mb-4">
+                        <div class="text-4xl text-center">💉</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">PET-CT</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>✓ Medicina nuclear</li>
+                        <li>✓ Rastrea metabolismo</li>
+                        <li>✓ Detecta actividad tumoral</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">🎯 Objetivo: Diagnóstico Computacional</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+                        <p class="text-3xl mb-2">📊</p>
+                        <p class="font-semibold text-gray-800">Objetividad</p>
+                        <p class="text-sm text-gray-600">Reducir variabilidad</p>
+                    </div>
+                    <div class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
+                        <p class="text-3xl mb-2">🔄</p>
+                        <p class="font-semibold text-gray-800">Consistencia</p>
+                        <p class="text-sm text-gray-600">Resultados constantes</p>
+                    </div>
+                    <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg">
+                        <p class="text-3xl mb-2">🧬</p>
+                        <p class="font-semibold text-gray-800">Radiogenómica</p>
+                        <p class="text-sm text-gray-600">Integración con genética</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pharmaceutical Pathology -->
+    <section id="patologia" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">Patología Farmacéutica</h2>
+            
+            <!-- Context -->
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 mb-12 shadow-xl">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">🔬 Contexto de Seguridad Preclínica</h3>
+                <p class="text-lg text-gray-700 mb-4">
+                    Un paso crucial en el desarrollo de fármacos es la <span class="font-semibold text-purple-600">evaluación de seguridad preclínica</span> 
+                    de moléculas candidatas en modelos animales para evaluar su toxicidad en todos los órganos.
+                </p>
+                <div class="bg-white rounded-lg p-6 mt-6">
+                    <p class="font-semibold text-red-600 text-xl mb-2">⚠️ Problema Central: Hematotoxicidad</p>
+                    <p class="text-gray-700">La evaluación de la <strong>médula ósea</strong> es crucial ya que es el sitio primario de hematopoyesis (producción de células sanguíneas).</p>
+                </div>
+            </div>
+
+            <!-- Challenge -->
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">El Reto de la Evaluación Manual</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                        <h4 class="font-bold text-red-800 mb-3 text-lg">❌ Limitaciones Actuales</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Evaluación subjetiva "a ojo"</li>
+                            <li>• Altamente laboriosa</li>
+                            <li>• Consume mucho tiempo (hasta una semana)</li>
+                            <li>• Alta variabilidad entre patólogos</li>
+                            <li>• Miles de células para contar manualmente</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+                        <h4 class="font-bold text-green-800 mb-3 text-lg">✅ Solución con Deep Learning</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Identificación automática de células</li>
+                            <li>• Cuantificación objetiva</li>
+                            <li>• Análisis rápido y eficiente</li>
+                            <li>• Resultados consistentes</li>
+                            <li>• Permite estudios estadísticos robustos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">💡 El Trabajo del Expositor</h3>
+                <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-6 rounded-xl mb-6">
+                    <p class="text-lg text-gray-800">
+                        <strong>Edgar A. Rios Piedra et al. (2023):</strong> Método automatizado basado en deep learning para evaluar 
+                        celularidad en imágenes WSI de médula ósea de rata.
+                    </p>
+                </div>
+
+                <h4 class="text-xl font-bold text-gray-800 mb-4">🏗️ Arquitectura del Pipeline</h4>
+                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-blue-50 p-4 rounded-lg text-center">
+                        <p class="font-bold text-blue-800 mb-2">Paso 1</p>
+                        <p class="text-sm text-gray-700">CNN poco profunda para segmentar médula ósea</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg text-center">
+                        <p class="font-bold text-green-800 mb-2">Paso 2</p>
+                        <p class="text-sm text-gray-700">Mask R-CNN para MKCs y SHCs</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg text-center">
+                        <p class="font-bold text-purple-800 mb-2">Paso 3</p>
+                        <p class="text-sm text-gray-700">SegNet para RBCs</p>
+                    </div>
+                </div>
+
+                <h4 class="text-xl font-bold text-gray-800 mb-4">📊 Tipos de Células Analizadas</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-indigo-50 p-4 rounded-lg">
+                        <p class="font-bold text-indigo-800 mb-2">SHCs</p>
+                        <p class="text-sm text-gray-600">Small Hematopoietic Cells - Células hematopoyéticas pequeñas</p>
+                    </div>
+                    <div class="bg-pink-50 p-4 rounded-lg">
+                        <p class="font-bold text-pink-800 mb-2">MKCs</p>
+                        <p class="text-sm text-gray-600">Megakaryocytes - Megacariocitos</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <p class="font-bold text-red-800 mb-2">RBCs</p>
+                        <p class="text-sm text-gray-600">Red Blood Cells - Glóbulos rojos</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-xl p-8">
+                <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">🎯 Resultados Clave</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">✓</div>
+                        <p class="text-gray-700">Precisión comparable a la variación entre patólogos para MKCs</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">✓</div>
+                        <p class="text-gray-700">Recuentos de SHCs más cercanos al consenso de patólogos que otros modelos (Cellpose, Stardist)</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">✓</div>
+                        <p class="text-gray-700">Rendimiento respalda su uso rutinario en evaluación de hematotoxicidad</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">✓</div>
+                        <p class="text-gray-700"><strong>Impacto:</strong> Acelera el desarrollo de medicamentos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Pathology Benefits -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Ventajas de la Patología Digital</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Trabajo Remoto</h3>
+                    <p class="text-gray-600">Los patólogos pueden trabajar desde cualquier ubicación</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <div class="text-4xl mb-4">✈️</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Sin Fronteras</h3>
+                    <p class="text-gray-600">Analiza muestras de países con restricciones sanitarias sin viajes costosos</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <div class="text-4xl mb-4">🔬</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Marcadores Avanzados</h3>
+                    <p class="text-gray-600">Uso de fluorescencia con ML para identificar células invisibles</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Estandarización</h3>
+                    <p class="text-gray-600">Procesos patológicos consistentes y reproducibles</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Mayor Velocidad</h3>
+                    <p class="text-gray-600">Acelera el desarrollo y aprobación de fármacos</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                    <div class="text-4xl mb-4">💾</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Meta-Análisis</h3>
+                    <p class="text-gray-600">Análisis de datos históricos para nuevos descubrimientos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusions -->
+    <section id="conclusiones" class="py-20 px-4 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 text-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Conclusiones</h2>
+            
+            <div class="space-y-8">
+                <!-- AI Supremacy -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <span class="text-3xl mr-3">🏆</span>
+                        Supremacía de la IA en Percepción Visual
+                    </h3>
+                    <p class="text-purple-100 mb-4">
+                        Los algoritmos modernos de deep learning han superado la capacidad humana en clasificación de imágenes, 
+                        logrando tasas de error inferiores a las de evaluadores humanos para 2017.
+                    </p>
+                    <div class="bg-white/5 p-4 rounded-lg">
+                        <p class="text-sm text-purple-200">
+                            <strong>Evolución:</strong> De métodos rudimentarios con filtros y bordes → Sistemas robustos con CNNs que aprenden características automáticamente
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Medical Diagnosis -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <span class="text-3xl mr-3">🏥</span>
+                        Transformación del Diagnóstico Médico
+                    </h3>
+                    <p class="text-purple-100 mb-4">
+                        La visión por computadora está estandarizando y cuantificando la medicina diagnóstica, 
+                        transitando de la subjetividad humana a la objetividad algorítmica.
+                    </p>
+                    <ul class="space-y-2 text-purple-100">
+                        <li>• Aplicable a todas las modalidades: Rayos X, CT, MRI, PET-CT</li>
+                        <li>• Integración futura con genómica (Radiogenómica)</li>
+                        <li>• Vital para seguimiento de enfermedades agresivas</li>
+                    </ul>
+                </div>
+
+                <!-- Pharmaceutical Pathology -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/15 transition">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center">
+                        <span class="text-3xl mr-3">💊</span>
+                        Impacto en Patología Farmacéutica
+                    </h3>
+                    <p class="text-purple-100 mb-4">
+                        El trabajo de Edgar A. Rios Piedra demuestra cómo el deep learning acelera el desarrollo farmacéutico 
+                        mediante cuantificación automatizada de celularidad en médula ósea.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-green-500/20 p-4 rounded-lg">
+                            <p class="font-bold mb-2">✓ Precisión Validada</p>
+                            <p class="text-sm text-purple-100">Comparable a variabilidad entre patólogos</p>
+                        </div>
+                        <div class="bg-green-500/20 p-4 rounded-lg">
+                            <p class="font-bold mb-2">✓ Acelera Desarrollo</p>
+                            <p class="text-sm text-purple-100">Evaluación rápida de hematotoxicidad</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Vision -->
+                <div class="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm rounded-2xl p-8 border border-yellow-500/30">
+                    <h3 class="text-2xl font-bold mb-4 text-center">🚀 El Futuro de la Medicina</h3>
+                    <p class="text-center text-lg text-purple-100">
+                        La integración de Computer Vision, Deep Learning y patología digital está revolucionando 
+                        el desarrollo de medicamentos, haciendo que los tratamientos lleguen más rápido a los pacientes 
+                        con mayor seguridad y eficacia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Grupo 1 - UNMSM</h2>
+            <p class="text-gray-600 mb-8">Facultad de Ingeniería de Sistemas e Informática</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="font-semibold text-gray-800">Aldair Alejandro Rivera Llancari</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="font-semibold text-gray-800">Cristhian Anthony Torres Tineo</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="font-semibold text-gray-800">Eva María Florisa Bayes Enriquez</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="font-semibold text-gray-800">José Manuel Sernaque Cobeñas</p>
+                </div>
+            </div>
+            <div class="mt-8 p-6 bg-purple-50 rounded-lg">
+                <p class="text-gray-700">
+                    <strong>Expositor:</strong> Edgar A. Rios Piedra<br>
+                    <strong>Paper:</strong> Analysis of cellularity in H&E-stained rat bone marrow tissue via deep learning (2023)
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="mb-2">&copy; 2025 LASAI - Universidad Nacional Mayor de San Marcos</p>
+            <p class="text-gray-400 text-sm">Computer Vision aplicado a Patología Farmacéutica</p>
+        </div>
+    </footer>
+</body>
+</html>
